@@ -110,3 +110,24 @@ client.on('interactionCreate', async (interaction) => {
     cmd.run(client, interaction);
   }
 });
+
+// Welcome message
+client.on('guildMemberAdd', async (interaction) => {
+  if (
+    !config.welcomeChannelID
+  ) return;
+
+  let welcomeChannel = client.channels.fetch(config.welcomeChannelID)
+    .then(channel => console.log(channel.name))
+    .catch(error => {
+        console.error('BOT: Failed to fetch welcome channel:', error);
+      })
+  
+  if (welcomeChannel.lastMessage) {
+    welcomeChannel.lastMessage.mentions.has(interaction.user)
+    return;
+  };
+
+  welcomeChannel.send({ content: ["Test"]});
+  
+});

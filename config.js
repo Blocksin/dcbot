@@ -8,4 +8,5 @@ module.exports = {
   language: process.env.LANGUAGE ?? 'en',
   debug: process.env.DEBUG ?? true,
   roleSyncCachePeriod: process.env.ROLE_SYNC_CACHE_PERIOD ?? 60,
+  welcomeChannelID: process.env.WELCOME_CHANNEL_ID ?? null,
 };
