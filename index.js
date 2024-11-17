@@ -112,22 +112,31 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 // Welcome message
+
+const welcomeEmbed = new EmbedBuilder()
+  .setTitle("Thank you for joining")
+  .setDescription("📋 Please read our rules and information before continuing on to the server.\n\nBlocksin is a Minecraft PvP community based on 1.7-1.8. You can join the server at blocksin.net.\n\n🛒 You can visit our website at https://blocksin.net/ or our store at https://blocksin.net/store/n/nIf you require any support head over to ⁠BlockSin Community⁠❓┃faq or ⁠BlockSin Community⁠🩹┃support if you require further assistance.")
+  .setImage("01HQ1TGA0GZKW5NC66Y1Y53879.png")
+  .setColor("#1863659")
+  .setFooter({
+    text: "Joined",
+  })
+  .setTimestamp();
+
 client.on('guildMemberAdd', async (interaction) => {
-  if (
-    !config.welcomeChannelID
-  ) return;
+  if (!config.welcomeChannelID) return;
 
-  let welcomeChannel = client.channels.fetch(config.welcomeChannelID)
-    .then(channel => console.log(channel.name))
-    .catch(error => {
-        console.error('BOT: Failed to fetch welcome channel:', error);
-      })
-  
-  if (welcomeChannel.lastMessage) {
-    welcomeChannel.lastMessage.mentions.has(interaction.user)
-    return;
-  };
+  try {
+    let welcomeChannel = await client.channels.fetch(config.welcomeChannelID);
 
-  welcomeChannel.send({ content: ["Test"]});
-  
+    if (welcomeChannel.lastMessage && welcomeChannel.lastMessage.mentions.has(interaction.user)) { return; }
+
+    welcomeChannel.send({ content: `Welcome to Blocksin, ${interaction.user.tag}!`, embeds: [welcomeEmbed] })
+      .catch(error => {
+        console.error('BOT: Failed to send welcome message:', error);
+      });
+
+  } catch (error) {
+    console.error('BOT: Failed to fetch welcome channel:', error);
+  }
 });
