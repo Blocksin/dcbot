@@ -115,7 +115,7 @@ client.on('interactionCreate', async (interaction) => {
 
 const welcomeEmbed = new Discord.EmbedBuilder()
   .setTitle("Thank you for joining")
-  .setDescription("📋 Please read our rules and information before continuing on to the server.\n\nBlocksin is a Minecraft PvP community based on 1.7-1.8. You can join the server at blocksin.net.\n\n🛒 You can visit our website at https://blocksin.net/ or our store at https://blocksin.net/store/n/nIf you require any support head over to ⁠BlockSin Community⁠❓┃faq or ⁠BlockSin Community⁠🩹┃support if you require further assistance.")
+  .setDescription("📋 Please read our rules and information before continuing on to the server.\n\nBlocksin is a Minecraft PvP community based on 1.7-1.8. You can join the server at blocksin.net.\n\n🛒 You can visit our website at https://blocksin.net/ or our store at https://blocksin.net/store /n/nIf you require any support head over to ⁠BlockSin Community⁠❓┃faq or ⁠BlockSin Community⁠🩹┃support if you require further assistance.")
   .setColor(0x1C6FEB)
   .setImage("https://media.discordapp.net/attachments/1298923346070736938/1307810381934366942/standard.gif?ex=673cfa54&is=673ba8d4&hm=86be666c8a1c4ae4efcead1153b59c8ccee3c11cd33692430b26c52cf7986bdd&=&width=750&height=300")
   .setFooter({
