@@ -1,26 +1,25 @@
-const Discord = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 
 // Handle command
 exports.run = async (client, interaction) => {
-
   await client.emit('guildMemberAdd', interaction.member);
-  
-  interaction.reply({
-    content: 'Emited guild member added event',
-    ephemeral: false
+
+  await interaction.reply({
+    content: 'Emitted guild member added event',
+    ephemeral: true,
   });
 };
 
 // Register command
-const cmd = new Discord.SlashCommandBuilder()
+const cmd = new SlashCommandBuilder()
   .setName('emit')
   .setDescription('Emit an event')
   .setDMPermission(false)
   .setDefaultMemberPermissions(8)
-  .addSubcommand(
-    new Discord.SlashCommandSubcommandBuilder()
-      .setName('guildMemberAdd')
-      .setDescription("Emit a guild member added event")
+  .addSubcommand((subcommand) =>
+    subcommand
+      .setName('guildmemberadd')
+      .setDescription('Emit a guild member added event')
   );
 
 exports.data = cmd.toJSON();
