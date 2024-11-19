@@ -123,27 +123,26 @@ const welcomeEmbed = new Discord.EmbedBuilder()
   })
   .setTimestamp();
 
-const welcomeButtons = new ActionRowBuilder()
+const welcomeButtons = new Discord.ActionRowBuilder()
   .addComponents(
-    new ButtonBuilder()
+    new Discord.ButtonBuilder()
       .setLabel('Website')
-      .setStyle(ButtonStyle.Link)
+      .setStyle(Discord.ButtonStyle.Link)
       .setEmoji('🌐')
       .setURL('https://blocksin.net'),
-    new ButtonBuilder()
+    new Discord.ButtonBuilder()
       .setLabel('Store')
-      .setStyle(ButtonStyle.Link)
+      .setStyle(Discord.ButtonStyle.Link)
       .setEmoji('🛒')
       .setURL('https://blocksin.net/store'),
-    new ButtonBuilder()
+    new Discord.ButtonBuilder()
       .setLabel('Support')
-      .setStyle(ButtonStyle.Link)
+      .setStyle(Discord.ButtonStyle.Link)
       .setEmoji('❓')
       .setURL('https://blocksin.net/support')
   );
 
 client.on('guildMemberAdd', async (interaction) => {
-  console.log("[BOT] Emitted guild member add")
   if (!config.welcomeChannelID) return;
 
   try {
