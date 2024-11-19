@@ -116,7 +116,7 @@ client.on('interactionCreate', async (interaction) => {
 const welcomeEmbed = new Discord.EmbedBuilder()
   .setTitle("Thank you for joining")
   .setDescription("📋 Please read our rules and information before continuing on to the server.\n\nBlocksin is a Minecraft PvP community based on 1.7-1.8. You can join the server at blocksin.net.\n\n🛒 You can visit our website at https://blocksin.net/ or our store at https://blocksin.net/store/n/nIf you require any support head over to ⁠BlockSin Community⁠❓┃faq or ⁠BlockSin Community⁠🩹┃support if you require further assistance.")
-  .setColor("#1863659")
+  .setColor(0x1863659)
   .setFooter({
     text: "Joined",
   })
