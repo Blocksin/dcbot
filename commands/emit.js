@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 // Handle command
 exports.run = async (client, interaction) => {
 
-  await client.emit('guildMemberAdd', interaction.user);
+  await client.emit('guildMemberAdd', interaction.member);
   
   interaction.reply({
     embeds: [embed],
