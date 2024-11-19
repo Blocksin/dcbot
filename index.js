@@ -131,7 +131,7 @@ client.on('guildMemberAdd', async (interaction) => {
 
     if (welcomeChannel.lastMessage && welcomeChannel.lastMessage.mentions.has(interaction.user)) { return; }
 
-    welcomeChannel.send({ content: `Welcome to Blocksin, ${interaction.user.tag}!`, embeds: [welcomeEmbed] })
+    welcomeChannel.send({ content: `Welcome to Blocksin, ${interaction.user}!`, embeds: [welcomeEmbed] })
       .catch(error => {
         console.error('BOT: Failed to send welcome message:', error);
       });
