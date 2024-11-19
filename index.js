@@ -143,6 +143,7 @@ const welcomeButtons = new ActionRowBuilder()
   );
 
 client.on('guildMemberAdd', async (interaction) => {
+  console.log("[BOT] Emitted guild member add")
   if (!config.welcomeChannelID) return;
 
   try {
