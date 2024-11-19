@@ -6,8 +6,8 @@ exports.run = async (client, interaction) => {
   await client.emit('guildMemberAdd', interaction.member);
   
   interaction.reply({
-    content: "Emited guild member added event",
-    ephemeral: false,
+    content: 'Emited guild member added event',
+    ephemeral: false
   });
 };
 
