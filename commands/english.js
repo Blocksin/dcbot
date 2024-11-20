@@ -7,7 +7,7 @@ exports.run = async (client, interaction) => {
 
     const message = interaction.message;
 
-    let res = await translate(message, {to: 'en'});
+    let res = await translate(message.content, {to: 'en'});
 
     interaction.editReply({ content: res.text})
         .catch(error => {
