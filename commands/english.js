@@ -5,7 +5,7 @@ const translate = require('google-translate-api-x');
 exports.run = async (client, interaction) => {
     await interaction.deferReply({ephemeral: true});
 
-    const message = interaction.message;
+    const message = interaction.targetMessage;
 
     let res = await translate(message.content, {to: 'en'});
 
