@@ -98,6 +98,7 @@ client.on('ready', async () => {
 client.on('interactionCreate', async (interaction) => {
   if (
     !interaction.isCommand() ||
+    !interaction.isUserContextMenuCommand() ||
     !interaction.channel ||
     interaction.channel.type === 'DM'
   )
