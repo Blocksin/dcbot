@@ -3,6 +3,7 @@ const translate = require('google-translate-api-x');
 
 // Handle command
 exports.run = async (client, interaction) => {
+    console.log("Now running english translation")
     await interaction.deferReply({ephemeral: true});
 
     const message = interaction.message;

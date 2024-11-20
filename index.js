@@ -96,6 +96,7 @@ client.on('ready', async () => {
 
 // Command Handler
 client.on('interactionCreate', async (interaction) => {
+  console.log("Interaction event created")
   if (
     !interaction.isCommand() ||
     !interaction.isUserContextMenuCommand() ||
@@ -103,6 +104,8 @@ client.on('interactionCreate', async (interaction) => {
     interaction.channel.type === 'DM'
   )
     return;
+
+  console.log("Interaction event is now running")
 
   const command = interaction.commandName;
   const cmd = client.commands.get(command);
