@@ -7,7 +7,7 @@ exports.run = async (client, interaction) => {
 
     const message = interaction.targetMessage;
 
-    let res = await translate(message.content, {to: 'en'});
+    let res = await translate(message.content, {to: 'tr'});
 
     interaction.editReply({ content: res.text})
         .catch(error => {
@@ -17,7 +17,7 @@ exports.run = async (client, interaction) => {
 
 // Register command
 const cmd = new Discord.ContextMenuCommandBuilder()
-  .setName('Translate to English')
+  .setName('Translate to Turkish')
   .setType(Discord.ApplicationCommandType.Message)
   .setDMPermission(false);
 
